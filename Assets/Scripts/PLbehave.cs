@@ -8,7 +8,7 @@ public partial class PLbehave : MonoBehaviour
     private SpriteRenderer sr;
     public static float TotalNumDestory = 0;
     public float PLSpeed = 20f;
-    public float PLRotateSpeed = 0.2f;
+    public const float PLRotateSpeed = 0.03f / 60f;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public partial class PLbehave : MonoBehaviour
 
         PointAtPosition(
             nowP.transform.localPosition,
-            0.03f / 60f
+            PLRotateSpeed
         );
 
         transform.localPosition +=
