@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 public class GAbehave : MonoBehaviour
 {
     public bool MouseControl = true;
@@ -12,10 +13,12 @@ public class GAbehave : MonoBehaviour
     private float EggSpawnAt = 0;
     public float NumOfTouch = 0;
     public float GAAcceleration = 10f;
+    public RectTransform EggCooldownBar;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        EggSpawnAt = -EggSpawnInterv;
     }
 
     // Update is called once per frame
@@ -62,6 +65,8 @@ public class GAbehave : MonoBehaviour
                 EggSpawnAt = Time.time;
             }
         }
+
+        UpdateCooldownBar();
     }
 
 
@@ -103,5 +108,24 @@ public class GAbehave : MonoBehaviour
         {
             return "Keyboard";
         }
+    }
+
+    private void UpdateCooldownBar()
+    {
+        if (EggCooldownBar == null)
+        {
+            return;
+        }
+
+        float timeLeft = Mathf.Max(
+            0f,
+            EggSpawnInterv - (Time.time - EggSpawnAt)
+        );
+
+        float ratio = timeLeft / EggSpawnInterv;
+
+        Vector2 size = EggCooldownBar.sizeDelta;
+        size.x = 200f * ratio;
+        EggCooldownBar.sizeDelta = size;
     }
 }
