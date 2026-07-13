@@ -57,7 +57,7 @@ public class Pointbehave : MonoBehaviour
             {
                 hitCount--;
                 Color tempcolor = sr.color;
-                tempcolor.a *= 0.8f;
+                tempcolor.a = Mathf.Max(0f, tempcolor.a - 0.25f);
                 sr.color = tempcolor;
             }
             else
@@ -74,7 +74,7 @@ public class Pointbehave : MonoBehaviour
             {
                 hitCount--;
                 Color tempcolor = sr.color;
-                tempcolor.a *= 0.8f;
+                tempcolor.a = Mathf.Max(0f, tempcolor.a - 0.25f);
                 sr.color = tempcolor;
             }
             else
