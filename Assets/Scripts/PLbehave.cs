@@ -26,8 +26,26 @@ public partial class PLbehave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PointAtPosition(nowP.transform.localPosition, PLRotateSpeed * Time.smoothDeltaTime);
-        transform.localPosition += PLSpeed * Time.smoothDeltaTime * transform.up;
+        if (nowP == null)
+        {
+            return;
+        }
+
+        PointAtPosition(
+            nowP.transform.localPosition,
+            0.03f / 60f
+        );
+
+        transform.localPosition +=
+            PLSpeed * Time.deltaTime * transform.up;
+
+        if (Vector3.Distance(
+                transform.localPosition,
+                nowP.transform.localPosition
+            ) <= 25f)
+        {
+            UpdateFSM();
+        }
     }
 
 
@@ -69,11 +87,6 @@ public partial class PLbehave : MonoBehaviour
                 PLReset();
             }
         }
-        else if (collision.gameObject.name == nowState.ToString())
-        {
-            UpdateFSM();
-        }
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
