@@ -22,6 +22,12 @@ public class GMbehave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //J键实现切换控制模式，调用PLbehave类中的ToggleWaypointMode方法
+        if (Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            PLbehave.ToggleWaypointMode();
+        }
+
         UIecho.text =
                 "Control Mode:(" + GA.whatControlMode() + ")" +
                 " Num of Touch:(" + GA.NumOfTouch + ")" +
@@ -34,6 +40,7 @@ public class GMbehave : MonoBehaviour
         {
             Application.Quit();
         }
+
     }
 
     public void EggChange(bool isAdd)
