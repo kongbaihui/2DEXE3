@@ -11,6 +11,7 @@ public class GAbehave : MonoBehaviour
     public float EggSpawnInterv = 0.2f;
     private float EggSpawnAt = 0;
     public float NumOfTouch = 0;
+    public float GAAcceleration = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,6 @@ public class GAbehave : MonoBehaviour
     void Update()
     {
         //control----------------------------------------------------------------
-
         if (Keyboard.current.mKey.wasPressedThisFrame) { MouseControl = !MouseControl; }
 
         Vector3 GAp = transform.localPosition;
@@ -33,8 +33,16 @@ public class GAbehave : MonoBehaviour
         else
         {
             GAp += GASpeed * Time.smoothDeltaTime * transform.up;
-            if (Keyboard.current.wKey.isPressed) { GASpeed += 0.2f; }
-            if (Keyboard.current.sKey.isPressed) { GASpeed -= 0.2f; }
+
+            if (Keyboard.current.wKey.isPressed)
+            {
+                GASpeed += GAAcceleration * Time.deltaTime;
+            }
+
+            if (Keyboard.current.sKey.isPressed)
+            {
+                GASpeed -= GAAcceleration * Time.deltaTime;
+            }
         }
         transform.localPosition = GAp;
 
