@@ -29,11 +29,12 @@ public class GMbehave : MonoBehaviour
         }
 
         UIecho.text =
-                "Control Mode:(" + GA.whatControlMode() + ")" +
-                " Num of Touch:(" + GA.NumOfTouch + ")" +
-                " Egg:" + "(" + NumOfEgg + ")" +
-                " Total Enemy:(10)" +
-                " Total Destory:" + "(" + PLbehave.TotalNumDestory + ")";
+                "Control Mode:(" + GA.whatControlMode() + ")\n" +
+                " Num of Touch:(" + GA.NumOfTouch + ")\n" +
+                " Egg:" + "(" + NumOfEgg + ")\n" +
+                " Total Enemy:(10)\n" +
+                " Total Destory:" + "(" + PLbehave.TotalNumDestory + ")\n" +
+                " Waypoint Mode:(" + PLbehave.GetWaypointModeName() + ")";
 
 
         if (Keyboard.current.qKey.isPressed)
