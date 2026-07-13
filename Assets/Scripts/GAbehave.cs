@@ -22,7 +22,7 @@ public class GAbehave : MonoBehaviour
     {
         //control----------------------------------------------------------------
 
-        if (Keyboard.current.mKey.isPressed) { MouseControl = !MouseControl; }
+        if (Keyboard.current.mKey.wasPressedThisFrame) { MouseControl = !MouseControl; }
 
         Vector3 GAp = transform.localPosition;
         if (MouseControl)
