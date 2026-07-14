@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 855573381}
   - component: {fileID: 855573380}
   m_Layer: 0
-  m_Name: GreenUp
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
