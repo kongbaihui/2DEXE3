@@ -59,7 +59,14 @@ public partial class PLbehave : MonoBehaviour
         }
         else
         {
-            int randomIndex = Random.Range(0, 6);
+            int currentIndex = (int)nowState;
+            int randomIndex;
+
+            do
+            {
+                randomIndex = Random.Range(0, 6);
+            }
+            while (randomIndex == currentIndex);
 
             switch (randomIndex)
             {
