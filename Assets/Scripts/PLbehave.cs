@@ -8,7 +8,7 @@ public partial class PLbehave : MonoBehaviour
     private SpriteRenderer sr;
     public static float TotalNumDestory = 0;
     public float PLSpeed = 20f;
-    public const float PLRotateSpeed = 0.03f / 60f;
+    public const float PLRotateSpeed = 0.03f/60f;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +73,7 @@ public partial class PLbehave : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<GAbehave>() != null || collision.gameObject.GetComponent<EGGbehave>() != null)
+        if (collision.gameObject.GetComponent<EGGbehave>() != null)
         {
             if (hitCount > 0)
             {
@@ -91,7 +91,7 @@ public partial class PLbehave : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<GAbehave>() != null || collision.gameObject.GetComponent<EGGbehave>() != null)
+        if (collision.gameObject.GetComponent<EGGbehave>() != null)
         {
             if (hitCount > 0)
             {
