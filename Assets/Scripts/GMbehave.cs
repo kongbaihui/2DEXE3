@@ -33,7 +33,7 @@ public class GMbehave : MonoBehaviour
                 " Num of Touch:(" + GA.NumOfTouch + ")\n" +
                 " Egg:" + "(" + NumOfEgg + ")\n" +
                 " Total Enemy:(10)\n" +
-                " Total Destory:" + "(" + PLbehave.TotalNumDestory + ")\n" +
+                " Total Destoryed:" + "(" + PLbehave.TotalNumDestory + ")\n" +
                 " Waypoint Mode:(" + PLbehave.GetWaypointModeName() + ")";
 
 
