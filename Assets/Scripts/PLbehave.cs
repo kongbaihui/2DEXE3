@@ -63,6 +63,7 @@ public partial class PLbehave : MonoBehaviour
     public void PLReset()
     {
         nowP = PA;
+        nowState = FollowState.TheA;
         TotalNumDestory++;
         hitCount = 3;
         Color tempcolor = sr.color;
