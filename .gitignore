@@ -16,3 +16,7 @@
 
 !/UserSettings/
 !/UserSettings/**
+
+
+!/docs/
+!/docs/**
